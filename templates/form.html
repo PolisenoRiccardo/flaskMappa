@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Inserisci il quartiere</title>
+</head>
+<body>
+    <form action="/mappa">
+    <label for="quartieri">Scegli un quartiere:</label>
+    <select name="quartieri">
+    {% for quartiere in quartieri %}
+		<option value="{{quartiere}}">{{quartiere}}</option>
+	{% endfor %} 
+    </select>
+    <input type="submit" value="Conferma">
+    </form>
+</body>
+</html>
