@@ -10,10 +10,12 @@ def home():
 
 @app.route('/mappa', methods = ['GET'])
 def mappa():   
-    import matplotlib.pyplot as plt
     global dfQuartieri
     inputquartiere = request.args['quartieri'] 
-    return render_template('map.html', mappa = dfQuartieri[dfQuartieri['NIL'] == inputquartiere].plot())
+    quartiere = dfQuartieri[dfQuartieri['NIL'] == inputquartiere]
+    return render_template('map.html', quartiere = quartiere.to_html())
     
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=3245, debug=True)
+
+  
