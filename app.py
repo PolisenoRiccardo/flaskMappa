@@ -8,6 +8,7 @@ def home():
     global dfQuartieri
     return render_template('form.html', quartieri = sorted(dfQuartieri['NIL'].to_list()))
 
+
 @app.route('/mappa', methods = ['GET'])
 def mappa():   
     global dfQuartieri
